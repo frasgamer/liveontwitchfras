@@ -6,28 +6,22 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('ready', async() => {
-var server = "514913543666139138"; // ايدي السررفر
-var channel = "514913891176677388";//ايدي الروم
-    setInterval(()=>{
-    client.guilds.get(server).channels.get(channel).send('احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart: , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:  , احبكم فراس جيمر  :heart:')
-    },305);
-})
-
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-
-  if (command == "say") {
-if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('?|`ADMINISTRATOR`ليس لديك صلاحيات`');
-   message.channel.sendMessage(args.join("  "))
-   message.delete()
-  }
- });
+client.on('ready', function(){	
+    var ms = 40000 ;	
+    var setGame = ['by Fras#9999','يستطيع الشيطان أن يكون ملاكاً . . والقزم عملاقاً . . والخفاش نسراً.. والظلمات نوراً . . لكن أمام الحمقى والسذج فقط'];	
+    var i = -1;	
+    var j = 0;	
+    setInterval(function (){	
+        if( i == -1 ){	
+j = 1;	
+       }	
+        if( i == (setGame.length)-1 ){	
+            j = -1;	
+      }	
+       i = i+j;	
+        client.user.setGame(setGame[i],`http://www.youtube.com/gg`);	
+}, ms);	
+	
+});
 
 client.login(process.env.BOT_TOKEN);
