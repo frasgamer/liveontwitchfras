@@ -7,7 +7,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){	
     var ms = 40000 ;	
-    var setGame = ['by Fras#9999','يستطيع الشيطان أن يكون ملاكاً . . والقزم عملاقاً . . والخفاش نسراً.. والظلمات نوراً . . لكن أمام الحمقى والسذج فقط'];	
+    var setGame = ['by Fras#9999','عندما تحب عدوك يحس بتفاهته
     var i = -1;	
     var j = 0;	
     setInterval(function (){	
