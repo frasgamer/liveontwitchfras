@@ -5,22 +5,53 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('ready', function(){	
-    var ms = 40000 ;	
-    var setGame = ['by Fras#9999','عندما تحب عدوك يحس بتفاهته','كثر الحاقدين يثير اعجابي'];	
-    var i = -1;	
-    var j = 0;	
-    setInterval(function (){	
-        if( i == -1 ){	
-j = 1;	
-       }	
-        if( i == (setGame.length)-1 ){	
-            j = -1;	
-      }	
-       i = i+j;	
-        client.user.setGame(setGame[i],`http://www.youtube.com/gg`);	
-}, ms);	
-	
-});
+
+
+
+
+
+
+
+
+
+const devs = ["307666420743798784"];
+const adminprefix = ["*"];
+client.on('message', message => {
+    var argresult = message.content.split(`).slice(1).join(' ');
+      if (!devs.includes(message.author.id)) return;
+      
+  if (message.content.startsWith('(prefix))ply')) {
+    client.user.setGame(argresult);
+      message.channel.send(:white_check_mark:   ${argresult})
+  } else 
+     if (message.content === ("leave")) {
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith('(prefix)wt')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send(:white_check_mark:   ${argresult})
+  } else 
+  if (message.content.startsWith('mils')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send(:white_check_mark:   ${argresult})
+  } else 
+  if (message.content.startsWith('(prefix)st')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/idk");
+      message.channel.send(:white_check_mark:)
+  }
+  if (message.content.startsWith('(prefix)setname')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(Changing The Name To ..${argresult} )
+} else
+if (message.content.startsWith('(prefix)setavatar')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(Changing The Avatar To :${argresult} `);
+}
+}); 
+{
+
+
+
+
 
 client.login(process.env.BOT_TOKEN);
